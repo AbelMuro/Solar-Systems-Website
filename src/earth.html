@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <meta name="author" content="Abel Muro"/>                                                                           
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                            
+
+        <!--importing bootstrap-->
+        <script type="module" src="./bootstrap/js/main.js" defer> </script> 
+        <link rel="stylesheet" href="./bootstrap/scss/main.scss">
+
+        <!--importing my custom css and js -->
+        <link rel="stylesheet" href="./scss/styles.scss">  
+
+        <script type="module">
+            import {
+                earth_file_animation,
+                change_to_night_earth,
+                change_to_day_earth
+            } from './js/animation.js';
+            window.earth_animation = earth_file_animation;
+            window.change_to_night_earth = change_to_night_earth;
+            window.change_to_day_earth = change_to_day_earth;
+        </script>
+    </head>
+
+    <body>
+        <script>
+            const callback = function(){
+                window.earth_animation();
+            };
+            if (document.readyState === "complete" || document.readyState === "interactive") 
+                setTimeout(callback, 1);
+        
+            else 
+                document.addEventListener("DOMContentLoaded", callback);
+        </script> 
+
+        <nav class="navbar navbar-expand-sm bg-earth navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    Solar System
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solid Planets</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="mercury.html">Mercury</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="venus.html">Venus</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="earth.html">Earth</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="mars.html">Mars</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gas Giants</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="jupiter.html">Jupiter</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="saturn.html"> Saturn </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="uranus.html"> Uranus </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="neptune.html">Neptune </a>
+                                </li>
+                            </ul>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-earth transitioning_fast" style="margin-top: 100px">
+            <div class="row">
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="earth_image" src="images/earth image.jpg">
+                    <p class="image_title">Earth Planet</p>
+                </div>
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    This is Earth, the only known planet to host life.
+                    It is the biggest terrestial planet in our solar system.
+                    This planet is made up of around 70% water, but surpisingly
+                    enough, the water only accounts to less than 1% of Earths mass.
+                    It's quite the planet isn't it? It's our home but there are still
+                    so much left unexplored in our own planet. Our planet has a very strong
+                    magnetic field due to the presence of inner Nickel-iron core. It is 
+                    because of this magnetic field that we are protected from the sun's solar 
+                    winds, which can cause alot of damage to the different life forms that we
+                    have here. <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    It is also surpising to note that 99% of all species that ever existed on 
+                    earth are now extict. Keep in mind that earth has lived for over 4 billion years.
+                    This is plenty of time for thousands of species to appear and disappear.
+                    Compared to the planet, we humans are a relatively young species. We only came into
+                    existence about 1 to 2.5 million years ago. We are certainly a young, ambitious group of 
+                    species aren't we? This is our home and we should consider taking care of it.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-12">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Earth is the only planet in our solar system that was not named after a Roman God.
+                    The name itself was derived from the english and german words 'ertha' and 'erde'
+                    respectively. Earth literally means ground. The name is estimated to be around 1000
+                    years old.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    As you would expect, the earths core is an extremely dense and extremely hot
+                    area of our planet. This core lies deep within our cool, brittle crust and solid 
+                    mantle. The core can be found 1,802 miles from the surface of the earth.
+                    <br><br>
+                    <cite>
+                        CITATIONS: <br>
+                        Editorial Staff, "67 interesting Facts about Earth", December 9th 2021,
+                        <a href="https://thefactfile.org/earth-facts/"> The Fact File </a> <br>
+
+                        Kiprop, Victor, "How long have humans been on earth", January 12, 2021,
+                        <a href="https://www.worldatlas.com/articles/how-long-have-humans-been-on-earth.html"> World Atlas </a><br>
+
+                        Bryner, Michelle, "How did earth get its name?", November 14, 2012,
+                        <a href="https://www.livescience.com/32274-how-did-earth-get-its-name.html"> Live Science </a><br>
+                    </cite>
+                </div>
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="earth_core" src="images/earth core.jpg">
+                    <p class="image_title">Earth Core</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="earth_container adding_more_margin_top">
+            <img class="earth_planet" src="images/earth planet for animation.png">
+            <div class="text_containers_green text_info_box_earth_one transitioning_fast">
+                Beautiful isn't it? Earth could be the envy of alien civilizations.
+                We have forests that are enormous, cities that showcase our technologies,
+                oceans that are insanely deep and have mysteries that have yet to be
+                discovered.
+            </div>
+            <div class="text_containers_blue text_info_box_earth_two transitioning_fast">
+                Unlike most known planets, Earth can be known to be beautiful even at night,
+                click the button below to view our planet at night...<br><br>
+                <button class="btn_night" onclick="window.change_to_night_earth()"> Night Time </button>
+            </div>
+        </section>
+    </body>
+</html>

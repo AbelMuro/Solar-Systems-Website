@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta name="author" content="Abel Muro"/>                                                                           <!-- defines the author of the webpage-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                            <!--SCROLLTRIGGER PLUGIN-->
+
+        <!--importing bootstrap-->
+        <script type="module" src="./bootstrap/js/main.js" defer> </script> 
+        <link rel="stylesheet" href="./bootstrap/scss/main.scss">
+
+        <!--importing my custom css and js -->
+        <link rel="stylesheet" href="./scss/styles.scss">  
+
+        <script type="module">
+            import {
+                neptune_file_animation,
+                change_to_neptunes_moon,
+                change_back_to_neptunes_surface
+            } from './js/animation.js';
+            window.neptune_animation = neptune_file_animation;
+            window.change_to_neptunes_moon = change_to_neptunes_moon;
+            window.change_back_to_neptunes_surface = change_back_to_neptunes_surface;
+        </script>
+    </head>
+
+    <body>
+        <script>
+            const callback = function(){
+                window.neptune_animation();
+            };
+        
+            if (document.readyState === "complete" || document.readyState === "interactive") 
+                setTimeout(callback, 1);
+        
+            else 
+                document.addEventListener("DOMContentLoaded", callback);
+        </script> 
+
+        <nav class="navbar navbar-expand-sm bg-neptune navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    Solar System
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solid Planets</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="mercury.html">Mercury</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="venus.html">Venus</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="earth.html">Earth</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="mars.html">Mars</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gas Giants</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="jupiter.html">Jupiter</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="saturn.html"> Saturn </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="uranus.html"> Uranus </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="neptune.html">Neptune </a>
+                                </li>
+                            </ul>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-neptune" style="margin-top: 100px">
+            <div class="row">
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="neptune_image" src="images/neptune image.jpg"/>
+                    <p class="image_title">Neptune Planet</p>
+                </div>
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    This is Neptune, the farthest planet in our solar system. Although it's not 
+                    as big as the other ice giants, Neptune is the fourth biggest planet in our solar system.
+                    The temperatures on this planet can reach a dazzling -353.2 degrees farhenheit.
+                    This fact is what makes Neptune the coldest planet in our solar system. 
+                    That's not all, if you think the temperatures are bad, the winds on this planet 
+                    are even worse. Neptune's winds can reach supersonic winds that blow up to 1200 
+                    miles per hour. This type of wind can easily destroy houses, trees, and pretty 
+                    much anything on earth.<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Neptunes atmosphere is made up of mostly hydrogen and helium, however the blue 
+                    color that radiates from Neptune comes from the traces of methane in its air. 
+                    Going deeper inside Neptune, the planet has a water-ammonia ocean that serves as 
+                    the planets mantle. Scientists estimate that the temperatures inside the mantle 
+                    can range between 3,140 degrees farhenheit to 8,540 degrees farhenheit.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-md-12">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Although a bit hard to believe, Neptune actually has six known rings that 
+                    are made up of ice particles and silicates. The rings have a reddish color 
+                    to them and are not as solid as Saturns rings or Uranus rings. Instead, Neptune's 
+                    rings have a prominent arc and are very clumpy.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Just like our planet Earth, Neptune has a rocky core that is made up of iron 
+                    and other materials. The core itself has a mass just slightly greater than Earth. 
+                    Neptunes core can reach up to 9,260 degrees farhenheit.<br><br>
+                    <cite>
+                        CITATIONS:<br>
+                        Editorial Staff, "30 interesting facts about neptune", May 2019, 
+                        <a href="https://thefactfile.org/neptune-facts/">The Fact File </a> <br>
+                        Nola Taylor Tillman, "What is Neptune Made of", December 2012, 
+                        <a href="https://www.space.com/18920-neptune-composition.html"> Space </a> <br>
+                    </cite>
+                </div>
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="neptune_core" src="images/neptune core.png">
+                    <p class="image_title">Neptune Core</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="neptune_animation adding_more_margin_top">
+            <img class="neptune_planet" src="images/neptune with moon.png"/>
+            <div class="text_containers_dark_blue text_box_neptune_one"> 
+                The coldest planet in our solar system, Neptune. If you 
+                love cold weather, then neptune is the perfect place for you. 
+                Just buy a home, set up a picnic and enjoy the weather!
+            </div>
+            <div class="text_containers_dark_blue text_box_neptune_two"> 
+                Click the button below to look at one of Neptunes moons. <br><br>
+                <button class="btn_neptune" onclick="window.change_to_neptunes_moon()"> 
+                    Click here
+                </button>
+            </div>
+        </section>
+
+
+    </body>
+
+
+</html>

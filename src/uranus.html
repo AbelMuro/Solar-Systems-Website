@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta name="author" content="Abel Muro"/>                                                                           <!-- defines the author of the webpage-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                            <!--SCROLLTRIGGER PLUGIN-->
+
+        <!--importing bootstrap-->
+        <script type="module" src="./bootstrap/js/main.js" defer> </script> 
+        <link rel="stylesheet" href="./bootstrap/scss/main.scss">
+
+        <!--importing my custom css and js -->
+        <link rel="stylesheet" href="./scss/styles.scss">  
+
+        <script type="module">
+            import {
+                uranus_file_animation, 
+                view_uranus_rings, 
+                change_back_to_uranus_surface} from './js/animation.js';
+            window.uranus_animation = uranus_file_animation;
+            window.view_uranus_rings = view_uranus_rings;
+            window.change_back_to_uranus_surface = change_back_to_uranus_surface;
+        </script>
+
+    </head>
+
+    <body>
+        <script>
+            const callback = function(){
+                window.uranus_animation();
+            };
+            if(document.readyState === "complete" || document.readyState === "interactive") 
+                setTimeout(callback, 1);
+        
+            else 
+                document.addEventListener("DOMContentLoaded", callback);
+        </script>    
+
+
+        <nav class="navbar navbar-expand-sm bg-uranus navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    Solar System
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solid Planets</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="mercury.html">Mercury</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="venus.html">Venus</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="earth.html">Earth</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="mars.html">Mars</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gas Giants</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="jupiter.html">Jupiter</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="saturn.html"> Saturn </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="uranus.html"> Uranus </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="neptune.html">Neptune </a>
+                                </li>
+                            </ul>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-uranus" style="margin-top: 100px">
+            <div class="row">
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="uranus_image" src="./images/uranus image.jpg">
+                    <p class="image_title"> Uranus Planet</p>
+                </div>
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The cold icy giant, Uranus. It was only recently discovered 
+                    in the year 1781. The planet is too dim to have been seen by 
+                    ancient civilizations such as the Romans or the Greeks. Uranus 
+                    has a strange way of orbitting the sun, it orbits literally on its 
+                    side. Scientists believe that the reason this planet orbits in such 
+                    a lopsided way is because of the many collisions that it suffered during 
+                    the early formation of our solar system. <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Uranus is another planet with extreme seasons, it experiences extreme cold 
+                    that averages -153 degrees farhenheit to -218 degrees farhenheit. Interestingly 
+                    enough, the planet can get as hot as it gets cold. Uranus can reach hot temperatures 
+                    that average 1070 degrees farhenheit. The winds on this icy giant can blow as fast as 
+                    560 miles per hour. This type of wind can easily uproot trees, destroy houses, and do 
+                    a ton of damage here on earth.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-12">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Uranus has 27 moons, all of which were named about the characters in the works of 
+                    William Shakespeare. Most of these moons are a bit irregularly shaped, very small, 
+                    and have little mass. Scientists believe that most of these planets were formed from 
+                    the accretion disk around the planet, and other moons were possibly captured by Uranus 
+                    gravitational pull.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Scientists believe that the core of Uranus possibly accounts around 20% of the planets 
+                    radius. The core of this planet can reach hot temperatures as high as 5000 kelvin. That 
+                    is as hot as the surface of the sun. Also, the pressure in this core can reach 8 million 
+                    bars.<br><br>
+                    <cite>
+                        CITATIONS:<br>
+                        Editorial staff, "52 interesting facts about Uranus", November 2019, 
+                        <a href="https://thefactfile.org/uranus-facts/">The Fact File </a> <br>   
+
+                        Benjami Elisha Sawe, "10 interesting facts about Uranus", November 2019, 
+                        <a href="https://www.worldatlas.com/articles/10-interesting-facts-about-uranus.html"> World Atlas </a><br>
+
+                        Fraser Cain, "Core of Uranus", October 2008, 
+                        <a href="https://www.universetoday.com/19234/core-of-uranus/"> Universe Today </a> <br>
+                    </cite>
+                </div>
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="uranus_core" src="images/uranus core.png">
+                    <p class="image_title">Uranus Core</p>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="uranus_animation" style="margin-top: 500px">
+            <img class="uranus_planet" src="images/uranus.png">
+            <div class="text_containers_light_blue text_box_uranus_one">
+                So this is Uranus, one of the icy giants filled with gas 
+                everywhere you go. It's very difficult to say if life can exist 
+                in such a planet with extreme seasons.
+            </div>
+            <div class="text_containers_light_blue text_box_uranus_two">    
+                Click the button below to take a look at uranus's rings <br><br>
+                <button class="btn_uranus" onclick="window.view_uranus_rings()"> Click here </button>
+            </div>
+        </section>
+    </body>
+</html>

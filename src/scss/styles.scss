@@ -1,0 +1,568 @@
+@use './abstracts/variables';
+@use 'sass:map';
+
+/* ===============================THE SELECTORS BELOW ARE USED BY MORE THAN ONE FILE=============================================================================*/
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-image: url("./../images/stars.png");
+    background-size: contain;
+    scroll-behavior: smooth;
+}
+.text_containers_orange {
+    @include variables.create_color_container(rgb(105, 56, 0), white)
+}
+.text_containers_blue_index {
+    @include variables.create_color_container(rgb(0, 67, 105), white)
+}
+.text_containers_white {
+    @include variables.create_color_container(white, black)
+}
+.text_containers_red {
+    @include variables.create_color_container(rgb(119, 3, 3), white)
+}
+.text_containers_neon_red {
+    @include variables.create_color_container(rgb(255, 0, 0), white)
+}
+.text_containers_green {
+    @include variables.create_color_container(rgb(13, 173, 7), white)
+}
+.text_containers_blue {
+    @include variables.create_color_container(dodgerblue, white)
+}
+.text_containers_light_brown {
+    @include variables.create_color_container(rgb(209, 161, 72), white)
+}
+.text_containers_dark_brown {
+    @include variables.create_color_container(rgb(117, 82, 17), white)
+}
+.text_containers_light_blue {
+    @include variables.create_color_container(rgb(84, 125, 238), black)
+}
+.text_containers_dark_blue {
+    @include variables.create_color_container(rgb(1, 45, 165), white)
+}
+.image_title {
+    font-style: italic;
+    color: rgb(94, 94, 94);
+}
+.btn_night, .btn_jupiter {
+    background-color: rgb(31, 29, 29);
+    padding: 0.8rem;
+    border-radius: 50px;
+    color: white
+}
+.btn_day, .btn_saturn, .btn_uranus, 
+.btn_neptune {
+    background-color: rgb(230, 255, 1);
+    padding: 0.8rem;
+    border-radius: 50px;
+    border: none;
+}
+
+.btn_day:hover, .btn_night:hover, 
+.btn_jupiter:hover, .btn_saturn:hover,
+.btn_uranus:hover, .btn_neptune:hover {
+    cursor: pointer;
+    background-color: rgb(1, 255, 35);
+}
+
+.adding_some_margin_top {
+    margin-top: 30px !important;
+}
+.adding_margin_top {
+    margin-top: 300px;
+}
+.adding_more_margin_top {
+    margin-top: 500px;
+}
+.transitioning_fast {
+    transition: 0.2s;
+    -webkit-transtion: 0.2s;
+}
+.transitioning_slow {
+    transition: 2s;
+    -webkit-transtion: 2s;
+}
+
+/*==================================================================INDEX FILE CLASSES===============================================================================================================================================*/
+.intro_container {
+    background-image: url("./../images/earth.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;                       /* border is used to prevent margin collapse*/
+    position: relative;
+}
+.white_box_animation {
+    width: 100%;
+    height: 150vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.planet_animation {
+    width: 100%;
+    height: 1600px;
+    position: relative;                             /* only used for the white text container below the planet animation*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+}
+.intro_text_box_one {
+    @include variables.create_text_box(top, 200px, left, 100px) {
+        display: inline-block;
+        transition: top 0.4s, left 0.4s;
+    }
+}
+.intro_text_box_two {
+    @include variables.create_text_box(top, 300px, right, 100px) {
+        display: inline-block;
+        transition: top 0.4s, right 0.4s;       
+    }
+}
+.white_text_box_index_one {
+    @include variables.create_text_box(top, 330px, left, 300px) {
+        display: inline-block;
+        transition: top 0.7s, left 0.7s;         
+    }
+
+}
+.white_text_box_index_two {
+    width: 600px;
+    display: inline-block;
+} 
+.white_text_box_index_three {
+    @include variables.create_text_box(top, 800px, right, 300px) {
+        display: inline-block;
+        transition: top 0.7s, right 0.7s;        
+    }
+
+}
+.planet_animation_text_box {
+    width: 900px;
+    position: absolute;
+    left: 500px;
+    bottom: 400px;
+    transition: left 0.7s, bottom 0.7s, right 0.7s, width 0.7s;
+}
+@each $names in variables.$planet-names {
+    .#{$names} {
+        display: inline-block;
+        @include variables.create_planet_dimensions(map.get(variables.$planet-dimensions, #{$names}, "width"), map.get(variables.$planet-dimensions, #{$names}, "height")); 
+        transition: width 0.7s, height 0.7s;
+    }
+}
+@media screen and (max-width: 630px) {
+    .white_text_box_index_one,
+    .white_text_box_index_three {
+        width: 100%
+    }
+    .intro_text_box_one,
+    .intro_text_box_two{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1215px) {
+    .white_text_box_index_one{
+        left: 0px;
+    }
+    .white_text_box_index_two {
+        left: 0px;
+    }  
+    .white_text_box_index_three {
+        right: 0px;
+    }
+    .planet_animation_text_box {
+        left: 100px !important;
+    }
+}
+@media screen and (max-width: 1490px) {
+    .intro_text_box_one {
+        left: 0px;
+        top: 100px;
+    }
+    .intro_text_box_two {
+        right: 0px;
+        top: 460px;
+    }
+}
+@media screen and (max-width: 1790px) {
+    @each $names in variables.$planet-names {
+        .#{$names} {
+            display: inline-block;
+            @include variables.create_planet_dimensions(map.get(variables.$planet-resizing, #{$names}, "width"), map.get(variables.$planet-resizing, #{$names}, "height")); 
+            transition: width 0.7s, height 0.7s;
+        }
+    }
+    .planet_animation {
+        height: 100vh;
+    }
+    .planet_animation_text_box {
+        left: 200px;
+        bottom: 50px;
+    }
+}
+
+/*===================================================================MERCURY FILE CLASSES================================================================================================================================*/
+.mercury_animation {
+    @extend .adding_more_margin_top;
+    @include variables.create_animation_container;
+}
+.mercury_image {
+    @include variables.create_image_dimensions(500px, 400px);
+}
+.mercury_core {
+    @include variables.create_image_dimensions(500px, 350px);
+}
+.text_box_mercury_one {
+    @include variables.create_text_box(top, 100px, left, 100px) {
+        z-index: 3;
+        opacity: 0;        
+    }    
+    @extend .transitioning_fast;
+}
+.text_box_mercury_two {
+    @include variables.create_text_box(top, 300px, right, 100px) {
+        opacity: 0;
+        z-index: 3;        
+    }    
+    @extend .transitioning_fast;
+}
+.sun_background_mercury {
+    display: inline-block;
+    width: 850px;
+    height: 800px;
+    @extend .transitioning_fast;
+}
+.mercury_zooming_in {
+    @include variables.create_object_in_animation(50px, 50px, 2);
+}
+.mercury_surface {
+    @include variables.create_object_in_animation(100%, auto, 1) {
+        opacity: 0;
+        bottom: 0px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .text_box_mercury_two {
+        right: 0px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .mercury_image, .mercury_core {
+        width: 350px;
+        height: 250px
+    }
+}
+@media screen and (max-width: 1199px) {
+    .mercury_image, .mercury_core {            
+        width: 400px;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+    .sun_background_mercury {
+        width: 650px;
+        height: 600px
+    }
+    .text_box_mercury_one {
+        top: 0px;
+        left: 0px;
+    }    
+}
+
+
+/*====================================================================VENUS FILE======================================================================================================================*/
+.venus_container {
+    @include variables.create_animation_container;
+}
+.venus_image {
+    @include variables.create_image_dimensions(500px, 390px);
+}
+.venus_core {
+    @include variables.create_image_dimensions(500px, 450px);
+}
+
+.sun_background_for_venus {
+    @include variables.create_object_in_animation(250px, 250px, 1){
+        display: inline-block;        
+    }
+}
+.venus_planet {
+    @include variables.create_object_in_animation(100px, 100px, 2);
+}
+.text_info_box_venus_one {
+    @include variables.create_text_box(top, 100px, right, 100px) {
+        z-index: 3;
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 620px) {
+    .text_info_box_venus_one {
+        left: 10px;
+        right: none
+    }
+}
+@media screen and (max-width: 1199px) {
+    .venus_image {
+        margin-bottom: 30px
+    }
+    .venus_core {
+        margin-top: 30px;
+    }
+    .venus_image, .venus_core {
+        width: 350px;
+        height: 300px;
+    }
+}
+
+/*================================================================== EARTH FILE ======================================================================================================================================*/
+.earth_container {
+    @include variables.create_animation_container;
+}
+.earth_image {
+    @include variables.create_image_dimensions(450px, 400px);
+}
+.earth_core {
+    @include variables.create_image_dimensions(440px, 400px);
+}
+.earth_planet {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+.text_info_box_earth_one {
+    @include variables.create_text_box(top, 100px, right, 50px){
+        opacity: 0;
+    };
+}
+.text_info_box_earth_two {
+    @include variables.create_text_box(top, 350px, left, 50px){
+        opacity: 0;
+    };
+}
+@media screen and (max-width: 635px) {
+    .text_info_box_earth_one {
+        top: 0px;
+        left: 0px
+    }
+    .text_info_box_earth_two {
+        top: 250px;
+        left: 0px;
+    }
+}
+
+/*=========================================================================== MARS FILE ================================================================================*/
+.mars_container_animation {
+    @include variables.create_animation_container;
+}
+.mars_image {
+    @include variables.create_image_dimensions(450px, 370px);
+}
+.mars_core {
+    @include variables.create_image_dimensions(420px, 370px);
+}
+.mars_planet {
+    width: 200px;
+    height: 200px
+}
+.text_box_mars_one {
+    @include variables.create_text_box(top, 50px, left, 50px) {
+        transition: top 0.4s, left 0.4s;        
+    }
+}
+.text_box_mars_two {
+    @include variables.create_text_box(top, 350px, right, 100px) {
+        transition: top 0.4s, right 0.4s;        
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .text_box_mars_one, .text_box_mars_two {
+        width: 100%;
+    }
+    .text_box_mars_two {
+        top: 250px !important;
+    }
+}
+@media screen and (max-width: 1340px){
+    .text_box_mars_one {
+        top: 0px;
+        left: 0px;
+    }
+    .text_box_mars_two {
+        top: 200px;
+        right: 0px;
+    }
+}
+//====================================================================JUPITER FILE ======================================================================================
+
+.jupiter_image {
+    @include variables.create_image_dimensions(400px, 400px);
+}
+
+.jupiter_core {
+    @include variables.create_image_dimensions(400px, 350px);
+}
+
+.jupiter_animation {
+    @include variables.create_animation_container;
+}
+
+.jupiter_planet {
+    width: 400px;
+    height: 400px;
+}
+
+.text_box_jupiter_one {
+    @include variables.create_text_box(top, 50px, left, 50px) {
+        transition: top 0.4s, left 0.4s;
+    }
+}
+.text_box_jupiter_two {
+    @include variables.create_text_box(top, 300px, right, 50px) {
+        transition: top 0.4s, right 0.4s, left 0.4s,
+    }
+}
+@media screen and (max-width: 615px) {
+    .text_box_jupiter_one {
+        top: 0px;
+        left: 0px;
+    }
+    .text_box_jupiter_two {
+        top: 250px;
+        left: 0px;
+    }
+}
+
+//=======================================================SATURN FILE ========================================================================================
+
+.saturn_image {
+    @include variables.create_image_dimensions(400px, 350px);
+}
+
+.saturns_core {
+    @include variables.create_image_dimensions(400px, 300px)
+}
+
+.saturn_animation {
+    @include variables.create_animation_container
+}
+
+.saturn_planet {
+    @include variables.create_image_dimensions(600px, 400px);
+}
+
+.text_box_saturn_one {
+    @include variables.create_text_box(top, 50px, left, 50px) {
+        transition: top 0.4s, left 0.4s;
+    };
+}
+.text_box_saturn_two {
+    @include variables.create_text_box(top, 200px, right, 50px) {
+        transition: top 0.4s, right 0.4s;
+    };
+}
+
+@media screen and (max-width: 615px) {
+    .text_box_saturn_one {
+        top: 0px;
+        left: 0px
+    }
+    .text_box_saturn_two {
+        top: 200px;
+        right: 0px;
+    }
+}
+
+//============================================URANUS FILE ======================================================================================================
+
+.uranus_image {
+    @include variables.create_image_dimensions(400px, 350px);
+}
+
+.uranus_core {
+    @include variables.create_image_dimensions(400px, 350px);
+}
+
+.uranus_animation {
+    @include variables.create_animation_container
+}
+
+.uranus_planet {
+    @include variables.create_planet_dimensions(400px, 800px);
+}
+
+.text_box_uranus_one {
+    @include variables.create_text_box(top, 50px, left, 50px) {
+        transition: top 0.4s, left 0.4s
+    }
+}
+.text_box_uranus_two {
+    @include variables.create_text_box(top, 200px, right, 50px) {
+        transition: top 0.4s, right 0.4s
+    }
+}
+
+@media screen and (max-width: 615px) {
+    .text_box_uranus_one {
+        top: 0px;
+        left: 0px;
+    }
+    .text_box_uranus_two {
+        top: 250px;
+        right: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+    .uranus_image {
+        width: 300px;
+        height: 250px;
+    }
+}
+
+//================================================== NEPTUNE FILE ==============================================================================================================================
+
+.neptune_image {
+    @include variables.create_image_dimensions(360px, 360px);
+}
+
+.neptune_core {
+    @include variables.create_image_dimensions(350px, 300px);
+}
+
+.neptune_animation {
+    @include variables.create_animation_container;
+}
+
+.neptune_planet {
+    @include variables.create_planet_dimensions(300px, 300px,);
+}
+
+.text_box_neptune_one {
+    @include variables.create_text_box(top, 50px, left, 50px) {
+        transition: top 0.4s, left 0.4s
+    }
+}
+
+.text_box_neptune_two {
+    @include variables.create_text_box(top, 250px, right,  50px) {
+        transition: top 0.4s, right 0.4s;
+    }
+}
+@media (max-width: 615px) {
+    .text_box_neptune_one {
+        top: 0px;
+        left: 0px
+    }
+    .text_box_neptune_two {
+        top: 200px;
+        right: 0px;
+    }
+}

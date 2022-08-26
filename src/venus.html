@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <meta name="author" content="Abel Muro"/>                                                                           <!-- defines the author of the webpage-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                            <!--SCROLLTRIGGER PLUGIN-->
+
+        <!--importing bootstrap-->
+        <script type="module" src="./bootstrap/js/main.js" defer> </script> 
+        <link rel="stylesheet" href="./bootstrap/scss/main.scss">
+
+        <!--importing my custom css and js -->
+        <link rel="stylesheet" href="./scss/styles.scss">  
+
+        <script type="module">
+            import {venus_file_animation} from './js/animation.js';
+            window.venus_animation = venus_file_animation;
+        </script>
+
+    </head>
+
+    <body>
+        <script>
+            const callback = function(){
+                window.venus_animation();
+            };
+        
+            if (document.readyState === "complete" || document.readyState === "interactive") 
+                setTimeout(callback, 1);
+        
+            else 
+                document.addEventListener("DOMContentLoaded", callback);
+        </script> 
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-venus">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    Solar System
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solid Planets</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="mercury.html">Mercury</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="venus.html">Venus</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="earth.html">Earth</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="mars.html">Mars</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gas Giants</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="jupiter.html">Jupiter</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="saturn.html"> Saturn </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="uranus.html"> Uranus </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="neptune.html">Neptune </a>
+                                </li>
+                            </ul>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-venus transitioning_fast" style="margin-top: 100px">
+            <div class="row">
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="venus_image transitioning_fast" src="images/venus with black.png">
+                    <p class="image_title">Venus Planet</p>
+                </div>
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    This is Venus, a real hell on earth, literally.
+                    This planet is known to be the hottest planet
+                    in our solar system. The average temperature on
+                    this planet is 864 degrees fahrenheit. The reason
+                    this planet is hotter than mercury is because of its 
+                    thick, dense cloud layer. Earth and Venus are very 
+                    similar in size and mass, but the real difference lies 
+                    in their atmosphere. The atmosphere on this planet is 
+                    made up of mostly carbon dioxide with some traces of nitrogen 
+                    <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Venus has a very small tilt compared to earth. Here on Earth,
+                    the tilt is what gives us seasons, but on venus, there are 
+                    literally no seasons at all. In other words, the planet has 
+                    consistent temperatures all year round. The atmosphere in Venus 
+                    is known to be toxic to any known lifeforms on earth. Even though
+                    it may be unlikely that this planet may host life. Some scientists 
+                    believe that there may be microbes that could exist high in the clouds 
+                    where it's supposedly cooler. 
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-12">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The name Venus was named after one of the Roman Gods, more specifically, 
+                    the Roman Goddess of Love. The planet's symbol is the symbol for womanhood 
+                    and love. This planet is especially bright on Earths sky because the clouds on
+                    Venus do a much better job at reflecting light.
+                </div>
+            </div>
+            <div class="row adding_some_margin_top">
+                <div class="col-lg-6">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The core on Venus is a bit difficult to study because the entire
+                    planet is shrouded in a very thick atmosphere. So our telescopes 
+                    can only see so much from down here on Earth. However, scientists 
+                    have made steady progress in understanding the core of this planet.
+                    It is believed that the planet has a iron core that is similar to 
+                    Earth's. The core is enveloped by a hot-rock mantle and has a very
+                    thin crust that surrounds the entire planet.
+                    <br><br>
+                    <cite>
+                        CITATIONS: <br>
+                        Tillman, Nola Taylor, "How Hot is Venus", Space.com, november 16, 2012, 
+                        <a href="https://www.space.com/18526-venus-temperature.html"> Space.com</a> <br>
+                        NASA, "Solar System Exploration: Venus", NASA.gov, February 10, 2022, 
+                        <a href="https://solarsystem.nasa.gov/planets/venus/overview/"> NASA.gov </a><br>
+                        Cain, Fraser, "How did Venus get its Name?", UniverseToday.com, May 14, 2008, 
+                        <a href="https://www.universetoday.com/14281/how-did-venus-get-its-name/"> UniverseToday.com </a>
+                    </cite>
+                </div>
+                <div class="col-lg-6" style="text-align: center">
+                    <img class="venus_core transitioning_fast" src="images/venus core.png">
+                    <p class="image_title">Venus Core</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="venus_container adding_more_margin_top">
+            <img class="sun_background_for_venus" src="images/sun image for mercury.png">
+            <img class="venus_planet" src="images/venus.png">
+            <div class="text_containers_red text_info_box_venus_one">
+                This place is a true representation of hell,
+                as stated before, the planet has constant temperatures
+                all year long. It is believed that even the clouds in venus 
+                are made of sulfuric acid. Volcanos are scattered all around
+                the surface of the planet shooting up lava in all directions.
+                Not a good place to take a vacation.
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

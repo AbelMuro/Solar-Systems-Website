@@ -1,0 +1,61 @@
+
+$planet-names: "sun", "mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune";
+$planet-dimensions: (
+    "sun" : ("width": 500px, "height": 1900px),
+    "mercury" : ("width": 40px, "height": 40px), "venus" : ("width": 60px, "height": 60px),
+    "earth" : ("width": 65px, "height": 70px), "mars" : ("width": 45px, "height": 45px),
+    "jupiter" : ("width": 400x, "height": 400px), "saturn" : ("width": 500px, "height": 300px),
+    "uranus" : ("width": 150px, "height": 300px), "neptune" : ("width": 100px, "height": 100px)
+);
+$planet-resizing: (
+    "sun": ("width": 120px, "height": 600px),
+    "mercury" : ("width": 30px, "height": 30px), "venus" : ("width": 40px, "height": 40px),
+    "earth" : ("width": 45px, "height": 50px), "mars" : ("width": 35px, "height": 35px),
+    "jupiter" : ("width": 150x, "height": 150px), "saturn" : ("width": 200px, "height": 130px),
+    "uranus" : ("width": 50px, "height": 100px), "neptune" : ("width": 40px, "height": 40px)
+);
+
+@mixin create_planet_dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin create_color_container($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+}
+
+@mixin create_animation_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+@mixin create_text_box($top, $value-one, $left-or-right, $value-two){
+    width: 500px;
+    position: absolute; 
+    #{$top}: $value-one;
+    #{$left-or-right}: $value-two;
+    @content;
+}
+
+@mixin create_image_dimensions($width, $height) {
+    width: $width;
+    height: $height;
+    border-radius: 50px;
+    display: inline-block;
+}
+@mixin create_object_in_animation ($width, $height, $zIndex) {
+    position: absolute;
+    width: $width;
+    height: $height;
+    z-index: $zIndex;
+    @content;
+}
