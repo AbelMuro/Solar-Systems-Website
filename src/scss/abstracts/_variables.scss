@@ -1,23 +1,31 @@
 
 $planet-names: "sun", "mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune";
 $planet-dimensions: (
-    "sun" : ("width": 500px, "height": 1900px),
-    "mercury" : ("width": 40px, "height": 40px), "venus" : ("width": 60px, "height": 60px),
-    "earth" : ("width": 65px, "height": 70px), "mars" : ("width": 45px, "height": 45px),
-    "jupiter" : ("width": 400x, "height": 400px), "saturn" : ("width": 500px, "height": 300px),
-    "uranus" : ("width": 150px, "height": 300px), "neptune" : ("width": 100px, "height": 100px)
+    "sun" : ("width": 500px, "transform": translateX(-1100px)),
+    "mercury" : ("width": 40px, "transform": translateX(-1200px)), "venus" : ("width": 60px, "transform": translateX(-1200px)),
+    "earth" : ("width": 65px, "transform": translateX(-1200px)), "mars" : ("width": 45px, "transform": translateX(-1200px)),
+    "jupiter" : ("width": 400px, "transform": translateX(-2000px)), "saturn" : ("width": 500px, "transform": translateX(-2600px)),
+    "uranus" : ("width": 150px, "transform": translateX(-2600px)), "neptune" : ("width": 100px, "transform": translateX(-3000))
 );
 $planet-resizing: (
-    "sun": ("width": 120px, "height": 600px),
-    "mercury" : ("width": 30px, "height": 30px), "venus" : ("width": 40px, "height": 40px),
-    "earth" : ("width": 45px, "height": 50px), "mars" : ("width": 35px, "height": 35px),
-    "jupiter" : ("width": 150x, "height": 150px), "saturn" : ("width": 200px, "height": 130px),
-    "uranus" : ("width": 50px, "height": 100px), "neptune" : ("width": 40px, "height": 40px)
+    "sun": ("width": 120px),
+    "mercury" : ("width": 30px), "venus" : ("width": 40px),
+    "earth" : ("width": 45px), "mars" : ("width": 35px),
+    "jupiter" : ("width": 150px), "saturn" : ("width": 200px),
+    "uranus" : ("width": 50px), "neptune" : ("width": 40px)
 );
 
-@mixin create_planet_dimensions($width, $height) {
+$planet-mobile: (
+    "sun": ("width": 60px),
+    "mercury" : ("width": 20px), "venus" : ("width": 30px),
+    "earth" : ("width": 35px), "mars" : ("width": 25px),
+    "jupiter" : ("width": 70px), "saturn" : ("width": 80px),
+    "uranus" : ("width": 20px), "neptune" : ("width": 20px)
+);
+
+@mixin create_planet_dimensions($width) {
     width: $width;
-    height: $height;
+    object-fit: contain;
 }
 
 @mixin create_color_container($bg-color, $text-color) {
@@ -46,9 +54,9 @@ $planet-resizing: (
     @content;
 }
 
-@mixin create_image_dimensions($width, $height) {
+@mixin create_image_dimensions($width) {
     width: $width;
-    height: $height;
+    object-fit: contain;
     border-radius: 50px;
     display: inline-block;
 }

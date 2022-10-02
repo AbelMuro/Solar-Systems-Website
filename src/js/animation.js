@@ -52,33 +52,33 @@ export function index_file_animation() {
         end: "40% 65%",
         markers: false
     }})
-    .from(".sun", {
-        x:-1100,
+    .to(".sun", {
+        x: 0,
         duration: 1
     })
-    .from(".mercury", {
-        x: -1200,
+    .to(".mercury", {
+        x: 0,
     })
-    .from(".venus", {
-        x: -1200
+    .to(".venus", {
+        x: 0,
     })
-    .from(".earth", {
-        x: -1200    
+    .to(".earth", {
+        x: 0,   
     })
-    .from(".mars", {
-        x: -1200
+    .to(".mars", {
+        x: 0,
     })
-    .from(".jupiter", {
-        x: -2000
+    .to(".jupiter", {
+        x: 0,
     })
-    .from(".saturn", {
-        x: -2300
+    .to(".saturn", {
+        x: 0,
     })
-    .from(".uranus", {
-        x: -2600
+    .to(".uranus", {
+        x: 0,
     })
-    .from(".neptune", {
-        x: -3000
+    .to(".neptune", {
+        x: 0,
     });
 
 //White Text container that is below the planets
